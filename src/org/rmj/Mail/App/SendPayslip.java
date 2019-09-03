@@ -15,10 +15,10 @@ import java.sql.SQLException;
 import java.util.Calendar;
 import javax.mail.MessagingException;
 import org.rmj.appdriver.SQLUtil;
-import org.rmj.Mail.Lib.SendMail;
-import org.rmj.replication.utility.LogWrapper;
+import org.rmj.lib.mail.SendMail;
+import org.rmj.lib.net.LogWrapper;
 import org.rmj.appdriver.agent.GRiderX;
-import org.rmj.Mail.Lib.MessageInfo;
+import org.rmj.lib.mail.MessageInfo;
 import org.rmj.appdriver.agent.MsgBox;
 import javax.net.ssl.SSLSocketFactory;
 

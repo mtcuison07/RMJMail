@@ -16,8 +16,8 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
 import org.rmj.appdriver.MiscUtil;
 import org.rmj.appdriver.SQLUtil;
-import org.rmj.Mail.Lib.MessageInfo;
-import org.rmj.Mail.Lib.ReadMail;
+import org.rmj.lib.mail.MessageInfo;
+import org.rmj.lib.mail.ReadMail;
 import org.rmj.appdriver.agent.GRiderX;
 
 import org.apache.poi.ss.usermodel.Sheet;
@@ -27,7 +27,7 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 //import jxl.*; 
 //import jxl.read.biff.BiffException;
 import org.rmj.appdriver.GProperty;
-import org.rmj.replication.utility.LogWrapper;
+import org.rmj.lib.net.LogWrapper;
 import org.rmj.appdriver.agent.MsgBox;
 
 /**

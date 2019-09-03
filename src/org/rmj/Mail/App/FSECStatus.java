@@ -20,9 +20,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.rmj.appdriver.GProperty;
 import org.rmj.appdriver.MiscUtil;
 import org.rmj.appdriver.SQLUtil;
-import org.rmj.Mail.Lib.MessageInfo;
-import org.rmj.Mail.Lib.SendMail;
-import org.rmj.replication.utility.LogWrapper;
+import org.rmj.lib.mail.MessageInfo;
+import org.rmj.lib.mail.SendMail;
+import org.rmj.lib.net.LogWrapper;
 import org.rmj.appdriver.agent.GRiderX;
 
 /**

@@ -11,8 +11,8 @@ import java.util.logging.Logger;
 import javax.mail.Folder;
 import javax.mail.Message;
 import javax.mail.MessagingException;
-import org.rmj.Mail.Lib.MessageInfo;
-import org.rmj.Mail.Lib.ReadMail;
+import org.rmj.lib.mail.MessageInfo;
+import org.rmj.lib.mail.ReadMail;
 import org.rmj.appdriver.agent.MsgBox;
 
 /**

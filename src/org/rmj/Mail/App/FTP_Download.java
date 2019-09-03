@@ -8,8 +8,8 @@ package org.rmj.Mail.App;
 import java.io.File;
 import org.rmj.appdriver.GCrypt;
 import org.rmj.appdriver.GProperty;
-import org.rmj.replication.utility.LogWrapper;
-import org.rmj.replication.utility.SFTP_DU;
+import org.rmj.lib.net.LogWrapper;
+import org.rmj.lib.net.SFTP_DU;
 
 /**
  *
