@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.rmj.Mail.Test;
+package org.rmj.mail.Test;
 
 import java.util.*;
 import java.io.*;
@@ -20,12 +20,6 @@ import org.apache.commons.lang3.StringUtils;
  */
 public class ReadEm {
    public static void main(String[] args) {
-      String certloc = "D:/GGC_Java_Systems/lib/cacerts";
-      
-      System.out.println(certloc);
-      System.setProperty("javax.net.ssl.trustStore", certloc);
-      System.setProperty("javax.net.ssl.trustStorePassword","changeit");
-      
       Properties props = new Properties();
 
       try {

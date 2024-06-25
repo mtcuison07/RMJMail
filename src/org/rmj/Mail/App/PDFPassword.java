@@ -3,21 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.rmj.Mail.App;
+package org.rmj.mail.App;
 
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.pdf.PdfReader;
-import com.itextpdf.text.pdf.PdfStamper;
-import com.itextpdf.text.pdf.PdfWriter;
+//import com.itextpdf.kernel.DocumentException;
+//import com.itextpdf.text.pdf.PdfReader;
+//import com.itextpdf.text.pdf.PdfStamper;
+//import com.itextpdf.text.pdf.PdfWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import com.itextpdf.kernel.pdf.PdfReader;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.EncryptionConstants;
+import com.itextpdf.kernel.pdf.WriterProperties;
+import com.itextpdf.kernel.pdf.PdfDocument ;
 /**
  *
  * @author kalyptus
  */
 public class PDFPassword {
-   public static void main(String[] args) throws IOException, DocumentException {
+   public static void main(String[] args) throws IOException {
       String source;
       String dest;
       String user;
@@ -43,12 +48,22 @@ public class PDFPassword {
       System.exit(0);
    }
    
-   public static void encrypt_pdf(String src, String dest, byte[] user, byte[] owner) throws IOException, DocumentException {
-       PdfReader reader = new PdfReader(src);
-       PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(dest));
-       stamper.setEncryption(user, owner,
-           PdfWriter.ALLOW_PRINTING, PdfWriter.ENCRYPTION_AES_128 | PdfWriter.DO_NOT_ENCRYPT_METADATA);
-       stamper.close();
-       reader.close();
+   public static void encrypt_pdf(String src, String dest, byte[] user, byte[] owner) throws IOException {
+       WriterProperties writerProp = new WriterProperties();
+       writerProp.setStandardEncryption(user,
+                                       owner, 
+                                       EncryptionConstants.ALLOW_PRINTING ,
+                                       EncryptionConstants.ENCRYPTION_AES_128 | EncryptionConstants.DO_NOT_ENCRYPT_METADATA);
+
+       PdfDocument document = new PdfDocument(new PdfReader(src), new PdfWriter(dest,writerProp));
+       document.close();
+
+//       PdfReader reader = new PdfReader(src);
+//       WriterProperties writerProp = new WriterProperties();
+//       writerProp.setStandardEncryption(user, owner, EncryptionConstants.ALLOW_PRINTING | EncryptionConstants.DO_NOT_ENCRYPT_METADATA, EncryptionConstants.ENCRYPTION_AES_128);
+//       PdfWriter writer = new PdfWriter(dest, writerProp);
+//        
+//       writer.close();
+//       reader.close();
    }   
 }
