@@ -81,33 +81,54 @@ public class SendPayslip {
   
                     String lsEmail;
                     lsEmail = rsToSend.getString("sEmailAdd");
-                   //reroute email to branch and department email...
-
-                   if(!rsToSend.getString("sEmailAdd").contains("gmail")){
-                       lsEmail = rsToSend.getString("sEmailAdd");
-                   }
-                   else if(!rsToSend.getString("sEmpLevID").equalsIgnoreCase("0")  ){
-                       lsEmail = rsToSend.getString("sEmailAdd");
-                   }
-                   else if("01".contains(rsToSend.getString("cDivision"))){
-                       if(rsToSend.getString("cMainOffc").contains("1")){
-                           if(rsToSend.getString("sBranchCD").equalsIgnoreCase("M029") && rsToSend.getString("sDeptIDxx").equalsIgnoreCase("015")){
-                                lsEmail = rsToSend.getString("sBranchMl");
-                           }
-//                           if(rsToSend.getString("sDeptIDxx").equalsIgnoreCase("015")){
-//                                lsEmail = rsToSend.getString("sBranchMl");
-//                           }
-                           else{
-                                lsEmail = rsToSend.getString("sDeptMail");
-                           }
-                       }   
-                       else{
-                           lsEmail = rsToSend.getString("sBranchMl");
-                       }
-                   }
-                   else{
-                       lsEmail = rsToSend.getString("sEmailAdd");
-                   }
+                    
+                    //reroute email to branch and department email...
+                    if(!rsToSend.getString("sEmailAdd").contains("gmail")){
+                        lsEmail = rsToSend.getString("sEmailAdd");
+                    } else if(!rsToSend.getString("sEmpLevID").equalsIgnoreCase("0")  ){
+                        lsEmail = rsToSend.getString("sEmailAdd");
+                    } else if(rsToSend.getString("cMainOffc").contains("1")){
+                        if(rsToSend.getString("sBranchCD").equalsIgnoreCase("M029") && 
+                            rsToSend.getString("sDeptIDxx").equalsIgnoreCase("015")){
+                            lsEmail = rsToSend.getString("sBranchMl");
+                        } else if(rsToSend.getString("sBranchCD").equalsIgnoreCase("M001") && 
+                            rsToSend.getString("sDeptIDxx").equalsIgnoreCase("015")){
+                            lsEmail = rsToSend.getString("sBranchMl");
+                        } else if(rsToSend.getString("sBranchCD").equalsIgnoreCase("PHO1") && 
+                            rsToSend.getString("sDeptIDxx").equalsIgnoreCase("015")){
+                            lsEmail = rsToSend.getString("sBranchMl");
+                        } else{
+                            lsEmail = rsToSend.getString("sDeptMail");
+                        }
+                    } else{
+                        lsEmail = rsToSend.getString("sBranchMl");
+                    }
+                   
+////                   if(!rsToSend.getString("sEmailAdd").contains("gmail")){
+////                       lsEmail = rsToSend.getString("sEmailAdd");
+////                   }
+////                   else if(!rsToSend.getString("sEmpLevID").equalsIgnoreCase("0")  ){
+////                       lsEmail = rsToSend.getString("sEmailAdd");
+////                   }
+////                   else if("01".contains(rsToSend.getString("cDivision"))){
+////                       if(rsToSend.getString("cMainOffc").contains("1")){
+////                           if(rsToSend.getString("sBranchCD").equalsIgnoreCase("M029") && rsToSend.getString("sDeptIDxx").equalsIgnoreCase("015")){
+////                                lsEmail = rsToSend.getString("sBranchMl");
+////                           }
+//////                           if(rsToSend.getString("sDeptIDxx").equalsIgnoreCase("015")){
+//////                                lsEmail = rsToSend.getString("sBranchMl");
+//////                           }
+////                           else{
+////                                lsEmail = rsToSend.getString("sDeptMail");
+////                           }
+////                       }   
+////                       else{
+////                           lsEmail = rsToSend.getString("sBranchMl");
+////                       }
+////                   }
+////                   else{
+////                       lsEmail = rsToSend.getString("sEmailAdd");
+////                   }
                    
 //                   if(!rsToSend.getString("sEmailAdd").contains("gmail")){
 //                       lsEmail = rsToSend.getString("sEmailAdd");
